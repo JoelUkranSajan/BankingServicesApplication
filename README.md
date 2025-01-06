@@ -1,38 +1,64 @@
-# BankingServicesApplication
+# Financial Management System - Overview
 
-An application showcasing basic banking features such as accounts, loans, and transactions. Made using **Spring Boot** for the backend and **Next.js** for the frontend.
+This repository contains the **Financial Management System**, a full-stack application designed to manage user accounts, cards, and loans. The project is divided into two main components:
 
-## Introduction
+- **Backend**: Built using a microservices architecture to handle the core business logic and data storage.
+- **Frontend**: A Next.js-based user interface for seamless interaction with the backend services.
 
-**BankingServicesApplication** is a full-stack web application that simulates basic banking operations. It provides users with the ability to:
+---
 
-- Create and manage bank accounts
-- Apply for loans
-- Perform transactions
-- View account statements
+## System Overview
 
-The project demonstrates the integration of a Java-based backend with a modern JavaScript frontend framework.
+The **Backend** is composed of multiple microservices:
 
-## Technologies Used
+- **Config Server**: Manages configurations for all services.
+- **Eureka Server**: Acts as the service discovery server.
+- **Accounts Service**: Handles user accounts.
+- **Cards Service**: Manages credit/debit card data.
+- **Loans Service**: Handles loan-related operations.
+- **Gateway Server**: Serves as the entry point to route requests to appropriate microservices.
 
-- **Backend**: Spring Boot
-- **Frontend**: Next.js
-- **Database**: (e.g., MySQL, PostgreSQL) *(Specify your database here if applicable)*
-- **RESTful API**: For communication between the frontend and backend
+The **Frontend** provides the user-facing interface for interacting with the backend services. It allows users to register, log in, view, and manage accounts, cards, and loans.
 
-## Getting Started
+---
 
-To run this application locally, you need to set up both the backend and frontend environments.
+## Prerequisites
 
-### Prerequisites
+To set up the Financial Management System, ensure you have the following installed:
 
-- Java Development Kit (JDK) 11 or higher
-- Node.js and npm
-- (Optional) A relational database system like MySQL or PostgreSQL
+- **Node.js** (v18 or higher)
+- **Docker** and **Docker Compose**
 
-### Installation
+---
 
-1. **Clone the repository**
+## Running the Application
 
-   ```bash
-   git clone https://github.com/JoelUkranSajan/BankingServicesApplication.git
+### Step 1: Start the Backend
+
+The backend services must be running before starting the frontend. Follow the steps in the backend's [README file](./backend/README.md) for detailed instructions on how to set up and run the backend microservices.
+
+1. Clone the repository.
+2. Navigate to the backend folder.
+3. Use Docker Compose to build and run the services.
+
+### Step 2: Start the Frontend
+
+Once the backend is up and running, set up the frontend by following the instructions in the frontend's [README file](./frontend/README.md). Ensure the frontend is connected to the same Docker network as the backend.
+
+---
+
+## Key Notes
+
+- The backend services must be fully operational for the frontend to function correctly. If the backend is not running, the frontend will fail to fetch data or process user requests.
+- Each component (frontend and backend) has its own dedicated README file with specific setup instructions, file structure details, and available endpoints.
+
+---
+
+## Individual Component Documentation
+
+- [Frontend README](./frontend/README.md): Instructions for setting up and running the frontend application.
+- [Backend README](./backend/README.md): Instructions for setting up and running the backend microservices.
+
+---
+
+By following the steps outlined in the respective README files, you can easily set up and run the Financial Management System. Ensure to start the backend first to avoid any connectivity issues with the frontend.
